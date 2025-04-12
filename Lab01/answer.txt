@@ -1,0 +1,18 @@
+1.What happens if users choose “Cancel”? 
+Khi người dùng nhấn vào lựa chọn "Cancel", chương trình sẽ trả về "You've chosen:No"
+2.How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” and “I don’t” 
+Để tùy chỉnh sao cho chỉ có 2 tùy chọn "Có" và "Không" hoặc "Tôi có" và "Tôi không" ta có thể dùng showConfirmDialog để chỉnh như code sau:
+
+import javax.swing.JOptionPane;
+public class ChoosingOption {
+	public static void main(String[]args) {
+		int option = JOptionPane.showConfirmDialog(null,
+					"Do you want to change to the first class ticket",
+					"Accept",
+					JOptionPane.YES_NO_OPTION);
+		
+		JOptionPane.showMessageDialog(null,"You've chosen: "
+					+ (option==JOptionPane.YES_OPTION?"Yes":"No"));
+		System.exit(0);
+	}
+}
