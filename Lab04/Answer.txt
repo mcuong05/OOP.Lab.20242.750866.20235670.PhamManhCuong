@@ -1,0 +1,56 @@
+So sánh các yếu tố của Swing và AWT:
+
+1. So sánh các container cấp cao (top-level containers):
+   - AWT:
+     + Frame: Là container cấp cao chính trong AWT, được sử dụng để tạo cửa sổ chính.
+     + Dialog: Dùng để tạo các hộp thoại, ví dụ như hộp thoại thông báo hoặc nhập liệu.
+     + Window: Container cơ bản, không có thanh tiêu đề hoặc viền, thường được dùng để tạo các cửa sổ tùy chỉnh.
+   - Swing:
+     + JFrame: Tương đương với Frame của AWT, nhưng cải tiến với giao diện nhẹ hơn (lightweight) và hỗ trợ Look and Feel.
+     + JDialog: Tương đương với Dialog của AWT, cung cấp các tính năng hiện đại hơn như hỗ trợ các thành phần Swing.
+     + JWindow: Tương đương với Window của AWT, được sử dụng cho các cửa sổ không có thanh tiêu đề, hỗ trợ giao diện nhẹ.
+     + Điểm khác biệt chính: Các container của Swing (JFrame, JDialog, JWindow) là lightweight, được vẽ bằng Java thay vì dựa vào hệ thống native, giúp linh hoạt hơn trong tùy chỉnh giao diện và tương thích đa nền tảng.
+
+2. So sánh tên lớp của các thành phần (components):
+   - AWT:
+     + Button: Nút bấm cơ bản.
+     + Label: Nhãn văn bản.
+     + TextField: Ô nhập văn bản một dòng.
+     + TextArea: Ô nhập văn bản nhiều dòng.
+     + Checkbox: Hộp kiểm.
+     + Choice: Menu thả xuống.
+     + List: Danh sách lựa chọn.
+     + Scrollbar: Thanh cuộn.
+   - Swing:
+     + JButton: Tương ứng với Button, hỗ trợ thêm biểu tượng và văn bản cùng lúc.
+     + JLabel: Tương ứng với Label, hỗ trợ thêm hình ảnh và căn chỉnh linh hoạt.
+     + JTextField: Tương ứng với TextField, có giao diện hiện đại hơn.
+     + JTextArea: Tương ứng với TextArea, hỗ trợ các tính năng như wrap text.
+     + JCheckBox: Tương ứng với Checkbox, cải tiến về giao diện.
+     + JComboBox: Tương ứng với Choice, hỗ trợ tùy chỉnh dữ liệu động.
+     + JList: Tương ứng với List, hỗ trợ hiển thị phức tạp hơn.
+     + JScrollBar: Tương ứng với Scrollbar, tích hợp tốt với các thành phần Swing khác.
+     + Điểm khác biệt chính: Tên lớp trong Swing thường bắt đầu bằng “J” (ví dụ: JButton, JLabel), trong khi AWT không có tiền tố này. Các thành phần Swing thường có tính năng mở rộng và giao diện đẹp hơn.
+
+3. So sánh xử lý sự kiện (event-handling):
+   - AWT:
+     + Sử dụng các interface như ActionListener, MouseListener, KeyListener để xử lý sự kiện.
+     + Các sự kiện được xử lý thông qua việc override các phương thức trong listener (ví dụ: actionPerformed, mouseClicked).
+     + Cách tiếp cận đơn giản nhưng đôi khi thiếu linh hoạt, đặc biệt khi cần xử lý nhiều loại sự kiện phức tạp.
+   - Swing:
+     + Cũng sử dụng các interface listener tương tự AWT (ActionListener, MouseListener, v.v.), vì Swing kế thừa từ AWT.
+     + Tuy nhiên, Swing hỗ trợ thêm các tính năng như Action, một giao diện trừu tượng giúp gộp các hành động (action) vào một đối tượng duy nhất, tái sử dụng dễ dàng hơn.
+     + Swing cũng cung cấp các lớp tiện ích như DefaultButtonModel để quản lý trạng thái nút, hoặc các sự kiện đặc biệt như PropertyChangeListener để theo dõi thay đổi thuộc tính.
+     + Điểm khác biệt chính: Swing có nhiều công cụ và lớp hỗ trợ xử lý sự kiện linh hoạt hơn, giúp lập trình viên dễ dàng quản lý các hành vi phức tạp.
+
+4. So sánh giao diện (appearance) của ứng dụng:
+   - AWT:
+     + Sử dụng các thành phần giao diện native của hệ điều hành (heavyweight), dẫn đến giao diện phụ thuộc vào nền tảng (ví dụ: nút bấm trên Windows khác trên macOS).
+     + Giao diện thường đơn giản, thiếu tính thẩm mỹ và khó tùy chỉnh.
+   - Swing:
+     + Sử dụng các thành phần lightweight, được vẽ hoàn toàn bằng Java, không phụ thuộc vào giao diện native của hệ điều hành.
+     + Hỗ trợ Look and Feel (ví dụ: Metal, Nimbus, Windows), cho phép thay đổi giao diện toàn ứng dụng một cách dễ dàng.
+     + Giao diện của Swing thường hiện đại, mượt mà hơn và có thể tùy chỉnh sâu (ví dụ: thêm biểu tượng, màu sắc, hoặc font chữ).
+     + Điểm khác biệt chính: Ứng dụng Swing có giao diện đồng nhất trên các nền tảng, trong khi AWT thay đổi tùy theo hệ điều hành. Swing cung cấp nhiều tùy chọn tùy chỉnh giao diện hơn.
+
+Tóm lại, Swing là phiên bản cải tiến của AWT, với các container và thành phần lightweight, giao diện đẹp hơn, và khả năng xử lý sự kiện linh hoạt hơn. Tuy nhiên, AWT vẫn hữu ích trong các ứng dụng đơn giản hoặc khi cần tích hợp chặt chẽ với giao diện native của hệ điều hành.
